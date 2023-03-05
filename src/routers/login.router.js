@@ -1,7 +1,6 @@
-
-  export const LoginRouter=[
-    {
-        path:'/login',
-        name:'Login',
-    }
-  ];
+export const LoginRouter = [
+  {
+    path: "/login",
+    name: "Login",
+  },
+];

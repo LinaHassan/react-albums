@@ -1,5 +1,5 @@
 import { useLocation, useMatch } from "react-router-dom";
-import {  UserProvider } from "../context";
+import { UserProvider } from "../context";
 import { LoginRouter } from "../routers";
 import LoginLayout from "./LoginLayout";
 import MainLayout from "./MainLayout";
@@ -18,10 +18,9 @@ function Layouts() {
       ) : (
         <Suspense fallback={<div>Loading</div>}>
           <UserProvider>
-          <MainLayout />
+            <MainLayout />
           </UserProvider>
-          </Suspense>
-        
+        </Suspense>
       )}
     </>
   );

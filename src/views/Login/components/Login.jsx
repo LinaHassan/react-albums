@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthService } from "../services/auth.service";
+import { AuthenticationService } from "../../../services";
 import "./login.css";
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [formState, setFormState] = useState(false);
+
+  useEffect(() => {
+    if (!formState) {
+      AuthenticationService.logout();
+    }
+  }, [formState]);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -15,6 +24,7 @@ const Login = () => {
         setErrMsg("Invalid Credentials!");
       } else {
         navigate("/albums");
+        setFormState(true);
       }
     } catch (error) {
       setErrMsg("Something went wrong.");

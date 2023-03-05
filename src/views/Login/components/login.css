@@ -19,7 +19,7 @@ html {
 .form {
   display: flex;
   flex-direction: column;
-  width: 23vw;
+  min-width: 23vw;
   gap: 1.5rem;
   height: auto;
   border-radius: 0.3125rem;
@@ -31,14 +31,14 @@ html {
 }
 
 .form input {
-  width: 18vw;
+  min-width: 18vw;
   height: 4vh;
   border: 0.125rem solid #000000;
   padding-left: 1rem;
 }
 
 .form button {
-    padding: 1rem 0 1rem 0;
+  padding: 1rem 0 1rem 0;
   text-align: center;
   color: white;
   background-color: black;
